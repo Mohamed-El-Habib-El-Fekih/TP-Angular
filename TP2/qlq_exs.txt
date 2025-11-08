@@ -1,0 +1,66 @@
+src/app :
+	Ce dossier contient tout le code TypeScript, HTML et CSS de votre application :
+	les composants (.component.ts, .html, .css),les services,les modules,et la logique principale du projet.
+src/assets :
+	Contient les ressources statiques (images, icônes, fichiers JSON, etc.)
+	Ces fichiers ne sont pas modifiés par Angular et sont copiés tels quels lors de la compilation.
+src/environments :
+	Contient les fichiers de configuration par environnement :
+		environment.ts -> configuration pour le développement
+		environment.prod.ts -> configuration pour la production.
+src/main.ts:
+	C'est le point d'entrée principal de l'application Angular.
+	Il démarre l'application en chargeant le module racine (AppModule) dans le navigateur.
+src/index.html:
+	Le fichier HTML principal de l’application.Il contient la structure de base du site et la balise racine.
+angular.json:
+	Le fichier de configuration du projet Angular.
+	Il décrit :
+		les chemins des fichiers sources
+		les scripts et styles à inclure
+		les options de compilation
+		les paramètres de build et de déploiement
+package.json:
+	Liste toutes les dépendances du projet et les scripts npm pour exécuter ou compiler l’application :
+		"dependencies" : bibliothèques nécessaires à l’exécution,
+		"devDependencies" : outils nécessaires au développement,
+		"scripts" : commandes (ex. ng serve, ng build…).
+tsconfig.json:
+	Fichier de configuration TypeScript.
+	Il définit les règles de compilation du code TypeScript vers JavaScript :
+		la version cible de JavaScript
+		les répertoires inclus/exclus
+		les options de vérification du code.
+
+
+QCM :
+Partie 1:
+1) b- main.ts
+2) c- src/app/
+3) b- Définir les configurations de construction et les options pour Angular CLI.
+4) a- Il décrit les dépendances du projet et les scripts npm disponibles.
+5) a- Configurer les options de compilation TypeScript pour le projet.
+Partie 2:
+1) c- ng generate component profil 
+2) d- profil.service.ts
+3) b- @Component
+4) a- La balise HTML personnalisée correspondant au sélecteur du composant.
+5) a- ng generate component composants/utilisateur
+Partie 3:
+1) c- [(ngModel)]="nom" 
+2) b- FormsModule
+3) b
+4) c- @angular/forms
+5) b
+Partie 4:
+1) c
+2) a- @NgModule
+3) b- imports
+4) c
+5) b- app.module.ts
+Partie 5:
+1) a
+2) b
+3) b 
+4) b
+5) b 

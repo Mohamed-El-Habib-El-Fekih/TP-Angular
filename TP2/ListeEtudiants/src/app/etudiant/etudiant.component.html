@@ -1,0 +1,32 @@
+<h2>{{etudiant.name}}</h2>
+<div><strong> id: </strong> {{etudiant.id}}</div>
+<div><strong> name: </strong> {{etudiant.name |uppercase}}</div>
+<div><strong> last name: </strong> {{etudiant.lastname |uppercase}}</div>
+<div><strong> Average: </strong> {{etudiant.average}}</div>
+
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Last Name</th>
+    <th>Moyenne</th>
+  </tr>
+  <tr>
+    <td>{{ etudiant.id }}</td>
+    <td>{{ etudiant.name |uppercase }}</td>
+    <td>{{ etudiant.lastname |uppercase }}</td>
+    <td>{{ etudiant.average }}</td>
+  </tr>
+</table>
+
+
+
+
+<h2>{{etudiant.name}}</h2>
+<div><strong> id: </strong> {{etudiant.id}}</div>
+<div>
+<label><strong>name: </strong>
+<input [(ngModel)]="etudiant.name" placeholder="name"/>
+</label>
+</div>
