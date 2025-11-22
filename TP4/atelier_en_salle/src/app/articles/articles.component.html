@@ -1,0 +1,12 @@
+<div *ngFor="let i of articles" [ngStyle]="{'color': getStockColor(i.niveau_stock)}" [ngClass]="{'faible': i.prix=='faible','moyenne': i.prix=='moyenne','elevee': i.prix=='elevee'}">{{i.titre}}   || {{i.contenu}} || {{i.niveau_stock}} <button (click)="incrementer(i)">incrémenter</button><button (click)="decrementer(i)">décrémenter</button></div>
+<label for="Titre">titre: </label><input [(ngModel)]="titre" type="text">
+<label for="Contenu">Contenu: </label><input [(ngModel)]="contenu" type="text">
+<label for="niveau_stock">niveau_stock: </label><input [(ngModel)]="niveau_stock" type="text">
+<div>
+<label for="prix">Prix: </label><select name="prix" [(ngModel)]="prix" id="">
+    <option value="élevee">élevée</option>
+    <option value="moyenne">moyenne</option>
+    <option value="faible">faible</option>
+</select>
+</div>
+<button (click)="inserer()">Ajouter</button>

@@ -1,0 +1,3 @@
+<h2 *ngFor="let i of taches" [ngClass]="{'barre' : i.statut=='complétée'}" [ngStyle]="{color : verif(i)}">{{i.description}} || {{i.statut}} || {{i.priorite}} <button (click)="switch(i)">Basculer</button></h2>
+<h2 *ngIf="taches.length!=0; else pasDeTaches">Les tâches sont affichées</h2>
+<ng-template #pasDeTaches>Vous avez des tâches en cours</ng-template>
