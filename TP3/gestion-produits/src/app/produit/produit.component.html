@@ -1,0 +1,9 @@
+<p>produit works!</p>
+<div [ngClass]="{'en-stock': enStock, 'hors-stock': !enStock}"
+    [ngStyle]="{'opacity': enStock ? '1' : '0.5'}">
+    <h3>Nom du Produit</h3>
+<p>Description du produit...</p>
+<button (click)="toggleStock()">Switch</button>
+<button (click)="ajouterProduit()">Ajouter au Panier</button>
+</div>
+
