@@ -1,0 +1,29 @@
+input[type="text"],
+select {
+  padding: 8px 10px;
+  margin: 12px 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+label {
+  font-weight: 600;
+  margin-left: 10px;
+  color: #334155;
+}
+p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 10px;
+}
+:host {
+  display: block;
+  padding: 12px;
+}

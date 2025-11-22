@@ -1,0 +1,19 @@
+<app-book-form
+  [bookToEdit]="bookToEdit"
+  (addBook)="addBook($event)"
+  (updateBook)="updateBook($event)">
+</app-book-form>
+<label>Sort by:</label>
+<select [(ngModel)]="sortField">
+  <option value="">--None--</option>
+  <option value="category">Category</option>
+  <option value="isAvailable">Availability</option>
+</select>
+
+<app-book-list
+  [tab]="displayedBooks"
+  (edit)="editBook($event)"
+  (delete)="deleteBook($event)">
+</app-book-list>
+
+<p>Total books: {{ displayedBooks.length }}</p>

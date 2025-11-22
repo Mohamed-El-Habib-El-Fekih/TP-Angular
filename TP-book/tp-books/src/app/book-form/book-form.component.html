@@ -1,0 +1,61 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+    <div>
+        <label for="title">Title</label>
+            <input type="text" id="title" name="title" [(ngModel)]="kteb.title" required minlength=3 #title="ngModel">
+            <div *ngIf="title.invalid && title.dirty">
+                <small *ngIf="title.errors?.['required']">Title is required.</small>
+                <small *ngIf="title.errors?.['minlength']">Minimum 3 characters.</small>
+                <small *ngIf="!isTitleValid(kteb.title) && title.dirty">Title cannot be numbers only.</small>
+            </div>
+    </div>
+    <div>    
+        <label for="author">Author</label>
+            <input type="text" id="author" name="author" [(ngModel)]="kteb.author" required minlength=3 #author="ngModel">
+            <div *ngIf="author.invalid && author.dirty">
+                <small *ngIf="author.errors?.['required']">Author is required.</small>
+                <small *ngIf="author.errors?.['minlength']">Minimum 3 characters.</small>
+            </div>
+    </div>
+    <div>    
+    <label for="publisherEmail">Publisher Email</label>
+        <input type="email" id="publisherEmail" name="publisherEmail" [(ngModel)]="kteb.publisherEmail" required email #email="ngModel">
+            <div *ngIf="email.invalid && email.dirty">
+                <small *ngIf="email.errors?.['required']">Email is required.</small>
+                <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+            </div>
+    </div>
+    <div>    
+    <label for="publisherPhone">Publisher Phone</label>
+        <input type="text"id="publisherPhone" name="publisherPhone" [(ngModel)]="kteb.publisherPhone" pattern="^[0-9]{8}$" #phone="ngModel">
+            <div *ngIf="phone.invalid && phone.dirty">
+                <small *ngIf="phone.errors?.['pattern']">Phone must be 8 digits exactly.</small>
+            </div>
+    </div>
+    <div>
+        <label for="releaseDate">Release Year</label>
+            <input type="number" id="releaseDate" name="releaseDate" [(ngModel)]="kteb.releaseDate" required min="1901" #year="ngModel">
+            <div *ngIf="year.invalid && year.dirty">
+                <small *ngIf="year.errors?.['required']">Release year is required.</small>
+                <small *ngIf="year.errors?.['min']">Year must be > 1900.</small>
+            </div>
+    </div>       
+    <div>
+        <label for="category">Category</label>
+            <select name="category" [(ngModel)]="kteb.category" required #cat="ngModel">
+                <option *ngFor="let i of categories" [value]="i">{{i}}</option>
+            </select>    
+            <div *ngIf="cat.invalid && cat.dirty">
+                <small>Category is required.</small>
+            </div>
+    </div>
+    <div>
+        <label><input type="checkbox" name="isAvailable" [(ngModel)]="kteb.isAvailable">Is Available</label>
+    </div>    
+    <div>    
+        <label for="stock">Stock</label><input type="number" name="stock" [(ngModel)]="kteb.stock" min="0" #stock="ngModel">
+            <div *ngIf="stock.invalid && stock.dirty">
+                <small>Stock cannot be negative.</small>
+            </div>
+    </div> 
+    <button type="submit">{{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}</button>
+</form>

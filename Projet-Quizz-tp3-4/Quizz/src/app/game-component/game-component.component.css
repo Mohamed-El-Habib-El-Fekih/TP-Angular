@@ -1,0 +1,28 @@
+.correct-answer {
+background-color: green;
+color: white;
+}
+.incorrect-answer {
+background-color: red;
+color: white;
+}
+.quiz-btn {
+  padding: 10px 16px;
+  margin: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, opacity 160ms;
+  cursor: pointer;
+}
+.quiz-btn.btn-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  outline: 2px solid rgba(0,0,0,0.06);
+}
+
+/* option sélectionnée : la rendre légèrement plus grande */
+.quiz-btn.btn-selected {
+  transform: scale(1.06);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  font-weight: 600;
+}

@@ -1,0 +1,119 @@
+.ng-invalid.ng-dirty { border-left: 5px solid red; }
+/* Container / layout */
+form {
+  max-width: 760px;
+  margin: 18px auto;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(18, 38, 63, 0.06);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+}
+
+/* Row grouping */
+form > div {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Inputs / selects / numbers */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+input[type="date"] {
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+  background: #fbfdff;
+}
+
+/* Checkbox inline label spacing */
+label > input[type="checkbox"] {
+  margin-right: 8px;
+  transform: translateY(2px);
+}
+
+/* Focus state */
+input:focus,
+select:focus {
+  border-color: #2563eb; /* blue */
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.06);
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #9ca3af;
+}
+
+/* Error messages (small) */
+small {
+  display: block;
+  font-size: 12px;
+  color: #dc2626; /* red-600 */
+  margin-top: 6px;
+}
+
+/* Angular-specific: show red border only when invalid AND dirty (user touched) */
+input.ng-invalid.ng-dirty,
+select.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220,38,38,0.06);
+}
+
+/* Make valid-but-dirty fields greenish a bit (optional) */
+input.ng-valid.ng-dirty,
+select.ng-valid.ng-dirty {
+  border-color: #16a34a;
+}
+
+/* Stock input smaller on the same line (if you later want inline) */
+#stock {
+  max-width: 160px;
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .12s ease, opacity .12s ease;
+  background: linear-gradient(180deg,#2563eb,#1e40af);
+  color: white;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.18);
+}
+
+/* Disabled button */
+button[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Small secondary reset button if you add one */
+button[type="button"] {
+  margin-left: 10px;
+  background: #f3f4f6;
+  color: #0f172a;
+  box-shadow: none;
+}

@@ -1,0 +1,24 @@
+<div *ngFor="let question of questions">
+    <!-- <div *ngIf="!question.ans"> -->
+        <h3>{{ question.question }}</h3>
+        <button *ngFor="let option of question.options"
+            [ngClass]="{'correct-answer':  question.ans && isCorrect(option, question),
+            'incorrect-answer': question.ans && !isCorrect(option, question),
+            'btn-hover': 0==0,               
+            'btn-selected': 0==0,           
+            'btn-locked': question.ans && !isCorrect(option, question)}"
+            [ngStyle]="{'opacity': question.ans ? '0.5' : '1'}"
+            (click)="onSelectOption(option, question)" class="quiz-btn">
+            {{ option }}
+        </button>
+    <!-- s</div> -->
+</div>
+<h2><div *ngIf="isReponse; else incorrectMessage">
+    <p>Bonne réponse ! Vous gagnez des points.</p>
+    </div>
+    <ng-template #incorrectMessage>
+    <p>Mauvaise réponse. Essayez encore !</p>
+    </ng-template></h2>
+<h2>Wrong answer: {{wrong_answer}}</h2>
+<h2>Correct answer: {{correct_answer}}</h2>
+<h2>Score: {{score}}</h2>
